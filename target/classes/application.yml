@@ -1,0 +1,18 @@
+server:
+    port: 9090
+    enableSelfPreservation: false
+    evictionIntervalTimerInMs: 4000
+
+eureka:
+    instance:
+        hostname: eureka-server
+        appname: AP注册中心
+    client:
+        registerWithEureka: false # 单点的时候设置为 false 禁止注册自身
+        fetchRegistry: false
+        serviceUrl:
+            defaultZone: http://localhost:9090/eureka
+
+spring:
+    main:
+        allow-bean-definition-overriding: true
