@@ -6,13 +6,13 @@ eureka:
         hostname: eureka-server
         appname: AP注册中心
     client:
-        registerWithEureka: false # 单点的时候设置为 false 禁止注册自身
-        fetchRegistry: false
+        register-with-eureka: false # 单点的时候设置为 false 禁止注册自身
+        fetch-registry: false
         serviceUrl:
-            defaultZone: http://localhost:9090/eureka
+            defaultZone: http://admin:123456@localhost:9090/eureka
     server:
-        enableSelfPreservation: false
-        evictionIntervalTimerInMs: 600000
+      enable-self-preservation: false
+      eviction-interval-timer-in-ms: 600000
 
 ribbon:
     eureka:
@@ -21,3 +21,7 @@ ribbon:
 spring:
     main:
         allow-bean-definition-overriding: true
+    security:
+      user:
+        name: admin
+        password: 123456
